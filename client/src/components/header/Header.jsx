@@ -24,7 +24,6 @@ const Header = ({
     <header className={`bg-white text-gray-600 ${className}`}>
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Left: Logo */}
           <div className="flex items-center">
             <div className="shrink-0">
               <Link to="/" className="text-2xl font-bold text-blue-400 hover:text-blue-300 transition">
@@ -33,9 +32,7 @@ const Header = ({
             </div>
           </div>
 
-          {/* Right: nav + CTA + mobile button */}
           <div className="flex items-center space-x-4">
-            {/* Desktop Navigation (moved to right) */}
             <div className="hidden md:flex space-x-8">
               {navItems.map((item) => {
                 const isActive = location.pathname === item.path
@@ -52,7 +49,6 @@ const Header = ({
               })}
             </div>
 
-            {/* Desktop CTA */}
             <div className="hidden md:block">
               <Link
                 to="/contact"
@@ -62,7 +58,6 @@ const Header = ({
               </Link>
             </div>
 
-            {/* Mobile menu button */}
             <div className="md:hidden">
               <button
                 onClick={toggleMenu}
@@ -86,7 +81,6 @@ const Header = ({
           </div>
         </div>
 
-        {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden pb-4 space-y-2 animate-in fade-in">
             {navItems.map((item) => {
