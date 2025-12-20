@@ -22,6 +22,7 @@ const Home = () => {
           src="src/assets/Rectangle 6.png" 
           alt="Interior design showcase" 
           className='w-full h-auto object-cover'
+          loading="lazy"
         />
       </div>
       <section className="bg-[#1a1a1a] text-white py-16 px-8 mb-16">
@@ -46,7 +47,7 @@ const Home = () => {
           </div>
 
           <div className="flex flex-col items-center justify-center space-y-8">
-  <div className="text-center">
+  <div className="text-center transition-transform hover:scale-110 duration-300 cursor-default">
     <div className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#92E4E4] leading-none mb-2">
       10<span className="text-[#FFFFFF]">+</span>
     </div>
@@ -55,7 +56,7 @@ const Home = () => {
     </p>
   </div>
 
-  <div className="text-center">
+  <div className="text-center transition-transform hover:scale-110 duration-300 cursor-default">
     <div className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#92E4E4] leading-none mb-2">
       177<span className="text-[#FFFFFF]">+</span>
     </div>
@@ -64,7 +65,7 @@ const Home = () => {
     </p>
   </div>
 
-  <div className="text-center">
+  <div className="text-center transition-transform hover:scale-110 duration-300 cursor-default">
     <div className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#92E4E4] leading-none mb-2">
       95<span className="text-[#FFFFFF]">%</span>
     </div>
@@ -85,6 +86,7 @@ const Home = () => {
             src="src/assets/Rectangle 8.png" 
             alt="Bedroom interior" 
             className="w-full h-full object-cover"
+            loading="lazy"
           />
         </div>
         
@@ -164,6 +166,7 @@ const Home = () => {
                 src="src/assets/Rectangle 9.png" 
                 alt="Bedroom with leaf wallpaper" 
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
             </div>
           </div>
@@ -178,6 +181,7 @@ const Home = () => {
                 src="src/assets/Rectangle 10.png" 
                 alt="Bedroom with floral wallpaper" 
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
             </div>
           </div>
@@ -203,6 +207,7 @@ const Home = () => {
               src="src/assets/square 1.png" 
               alt="Interior 1" 
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              loading="lazy"
             />
           </div>
           
@@ -212,6 +217,7 @@ const Home = () => {
               src="src/assets/square 2.png" 
               alt="Interior 2" 
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              loading="lazy"
             />
           </div>
           
@@ -221,6 +227,7 @@ const Home = () => {
               src="src/assets/square 4.png" 
               alt="Interior 3" 
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              loading="lazy"
             />
           </div>
           
@@ -230,6 +237,7 @@ const Home = () => {
               src="src/assets/square 3.png" 
               alt="Interior 4" 
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              loading="lazy"
             />
           </div>
         </div>
@@ -248,7 +256,7 @@ const Home = () => {
         {/* Testimonial Cards */}
         <div className="grid md:grid-cols-3 gap-6">
           {/* Card 1 */}
-          <div className="bg-[#D8EEED] p-6">
+          <div className="bg-[#D8EEED] p-6 transition-transform hover:scale-105 duration-300">
             <h3 className="text-[#211D1E] font-semibold text-lg mb-3">
               "Outstanding workmanship!"
             </h3>
@@ -265,7 +273,7 @@ const Home = () => {
           </div>
 
           {/* Card 2 */}
-          <div className="bg-[#D8EEED] p-6">
+          <div className="bg-[#D8EEED] p-6 transition-transform hover:scale-105 duration-300">
             <h3 className="text-[#211D1E] font-semibold text-lg mb-3">
               "Professional and reliable."
             </h3>
@@ -282,7 +290,7 @@ const Home = () => {
           </div>
 
           {/* Card 3 */}
-          <div className="bg-[#D8EEED] p-6">
+          <div className="bg-[#D8EEED] p-6 transition-transform hover:scale-105 duration-300">
             <h3 className="text-[#211D1E] font-semibold text-lg mb-3">
               "Great experience overall."
             </h3>

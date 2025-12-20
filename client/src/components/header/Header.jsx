@@ -40,7 +40,7 @@ const Header = ({
                   <Link
                     key={item.path}
                     to={item.path}
-                    className={`transition duration-300 relative group ${isActive ? 'text-[#003232]' : 'hover:text-[#003232]'}`}
+                    className={`transition duration-300 relative font-medium group ${isActive ? 'text-[#003232]' : 'hover:text-[#003232]'}`}
                   >
                     {item.label}
                     <span className="absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full text-[16px]"></span>

@@ -10,17 +10,18 @@ export default function Footer() {
               src="/api/placeholder/120/40" 
               alt="AL ANEEQ" 
               className="h-10"
+              loading='lazy'
             />
           </div>
           
           <nav className="flex gap-8 mb-6 md:mb-0">
-            <a href="#home" className="text-white hover:text-gray-300 transition text-sm">
+            <a href="/" className="text-white hover:text-gray-300 transition text-sm">
               Home
             </a>
-            <a href="#service" className="text-white hover:text-gray-300 transition text-sm">
+            <a href="/services" className="text-white hover:text-gray-300 transition text-sm">
               Service
             </a>
-            <a href="#about" className="text-white hover:text-gray-300 transition text-sm">
+            <a href="/about" className="text-white hover:text-gray-300 transition text-sm">
               About
             </a>
           </nav>
