@@ -1,6 +1,56 @@
-import { Link } from "react-router"
+import { Link } from "react-router";
+import serviceSectionImg from '../assets/Rectangle 12.png';
+import { useEffect, useState } from "react";
 
 const Services = () => {
+    const [imageLoaded, setImageLoaded] = useState(false);
+    const [contentLoaded, setContentLoaded] = useState(false);
+    
+      useEffect(() => {
+        // Simulate content loading
+        const timer = setTimeout(() => {
+          setContentLoaded(true);
+        }, 500);
+        return () => clearTimeout(timer);
+      }, []);
+
+      if (!contentLoaded) {
+  return (
+    <div className="pt-16 animate-pulse">
+      <div className="max-w-7xl mx-auto px-8">
+        {/* Header Skeleton */}
+        <div className="mb-8">
+          {/* Title Skeleton */}
+          <div className="h-12 md:h-16 bg-gray-200 rounded w-80 mb-4"></div>
+          
+          {/* Description Skeleton */}
+          <div className="space-y-3 mb-6 max-w-4xl">
+            <div className="h-4 bg-gray-200 rounded w-full"></div>
+            <div className="h-4 bg-gray-200 rounded w-full"></div>
+            <div className="h-4 bg-gray-200 rounded w-3/4"></div>
+          </div>
+          
+          {/* Services Title Skeleton */}
+          <div className="h-6 bg-gray-200 rounded w-24 mb-4"></div>
+        </div>
+
+        {/* Service List Skeleton */}
+        <div className="mb-4 space-y-0">
+          {[1, 2, 3, 4, 5].map((item) => (
+            <div key={item} className="p-2 border-b border-gray-200 flex justify-between items-center">
+              <div className="h-5 bg-gray-200 rounded w-48"></div>
+              <div className="h-10 w-10 bg-gray-200 rounded"></div>
+            </div>
+          ))}
+        </div>
+      </div>
+      
+      {/* Image Section Skeleton */}
+      <div className="h-64 md:h-96 bg-gray-200"></div>
+    </div>
+  );
+}
+
   return (
     <div className="pt-16">
       <div className="max-w-7xl mx-auto px-8">
@@ -10,10 +60,8 @@ const Services = () => {
             <span className="text-[#18181B]">OUR </span>
             <span className="text-[#008A8A]">SERVICE</span>
           </h1>
-          <p className="max-w-4xl text-[#0C0C0D] text-sm leading-relaxed mb-6">
-            At AL NAHES GENERAL MAINTENANCE LLC, we offer a complete range of interior and maintenance solutions designed to bring functionality,
-            comfort, and elegance to every space. Since 2021, we've been transforming homes, villas, and multi-apartments with a pat flair sense of standing,
-            excellence in every project.
+          <p className="max-w-5xl text-[#0C0C0D] text-sm md:text-base font-normal mb-6">
+            At AL ANEEQ GENERAL MAINTENANCE LLC, we offer a complete range of interior and maintenance solutions designed to bring functionality, comfort, and elegance to every space. Since 2014, we’ve been transforming Homes, Villas, and Hotel apartments with a perfect blend of creativity, precision, and craftsmanship.
           </p>
           <h2 className="text-[#008A8A] font-semibold text-lg mb-4">Services</h2>
         </div>
@@ -68,9 +116,26 @@ const Services = () => {
 
         {/* Image Section */}
       </div>
-       <div className="overflow-hidden shadow-lg">
-              <img src="/src/assets/Rectangle 12.png" alt="" loading="lazy"/>
-        </div>
+      {/* Image Section Skeleton */}
+<div className="relative overflow-hidden shadow-lg">
+  {/* Skeleton Loader */}
+  {!imageLoaded && (
+    <div className="absolute inset-0 bg-gray-200 animate-pulse">
+      <div className="w-full h-full linear-to-r from-gray-200 via-gray-300 to-gray-200"></div>
+    </div>
+  )}
+  
+  {/* Actual Image */}
+  <img 
+    src={serviceSectionImg} 
+    alt="Service showcase" 
+    className={`w-full h-auto object-cover transition-opacity duration-500 ${
+      imageLoaded ? 'opacity-100' : 'opacity-0'
+    }`}
+    onLoad={() => setImageLoaded(true)}
+    loading="lazy"
+  />
+</div>
     </div>
   )
 }

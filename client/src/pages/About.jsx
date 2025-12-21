@@ -1,13 +1,122 @@
     import React from 'react'
+    import { useState, useEffect } from 'react';
+    import aboutImg from '../assets/Rectangle 11.png';
 
     export default function About(){
+
+        const [imageLoaded, setImageLoaded] = useState(false);
+        const [contentLoaded, setContentLoaded] = useState(false);
+        
+          useEffect(() => {
+            // Simulate content loading
+            const timer = setTimeout(() => {
+              setContentLoaded(true);
+            }, 500);
+            return () => clearTimeout(timer);
+          }, []);
+
+           if (!contentLoaded) {
+    return (
+      <div className="animate-pulse">
+        {/* Top Section Skeleton */}
+        <div className="px-4 md:px-8 mt-16 mb-8">
+          <div className="h-12 md:h-16 bg-gray-200 rounded w-40 mb-8"></div>
+          <div className="max-w-5xl space-y-3">
+            <div className="h-4 bg-gray-200 rounded w-full"></div>
+            <div className="h-4 bg-gray-200 rounded w-full"></div>
+            <div className="h-4 bg-gray-200 rounded w-3/4"></div>
+          </div>
+        </div>
+
+        {/* Two Column Section Skeleton */}
+        <div className="px-4 md:px-8 mb-16">
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+            {/* Left Side Skeleton */}
+            <div className="w-full lg:w-1/2 space-y-12">
+              <div>
+                <div className="h-8 bg-gray-200 rounded w-48 mb-6"></div>
+                <div className="space-y-3 mb-6">
+                  <div className="h-4 bg-gray-200 rounded w-full"></div>
+                  <div className="h-4 bg-gray-200 rounded w-full"></div>
+                  <div className="h-4 bg-gray-200 rounded w-5/6"></div>
+                </div>
+                <div className="space-y-3">
+                  <div className="h-4 bg-gray-200 rounded w-full"></div>
+                  <div className="h-4 bg-gray-200 rounded w-full"></div>
+                  <div className="h-4 bg-gray-200 rounded w-4/5"></div>
+                </div>
+              </div>
+              <div>
+                <div className="h-8 bg-gray-200 rounded w-56 mb-6"></div>
+                <div className="space-y-3 mb-6">
+                  <div className="h-4 bg-gray-200 rounded w-full"></div>
+                  <div className="h-4 bg-gray-200 rounded w-full"></div>
+                  <div className="h-4 bg-gray-200 rounded w-3/4"></div>
+                </div>
+                <div className="space-y-3">
+                  <div className="h-4 bg-gray-200 rounded w-full"></div>
+                  <div className="h-4 bg-gray-200 rounded w-full"></div>
+                  <div className="h-4 bg-gray-200 rounded w-5/6"></div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Side Image Skeleton */}
+            <div className="w-full lg:w-1/2 h-96 bg-gray-200 rounded"></div>
+          </div>
+        </div>
+
+        {/* Team Section Skeleton */}
+        <div className="bg-gray-300 py-16 px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="h-8 bg-gray-400 rounded w-64 mx-auto mb-12"></div>
+            <div className="border-t border-gray-400 mb-12"></div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[1, 2, 3].map((item) => (
+                <div key={item} className="text-center">
+                  <div className="h-16 w-16 bg-gray-400 rounded-full mx-auto mb-4"></div>
+                  <div className="h-6 bg-gray-400 rounded w-48 mx-auto mb-2"></div>
+                  <div className="h-4 bg-gray-400 rounded w-56 mx-auto"></div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Why Choose Us Skeleton */}
+        <div className="bg-gray-800 py-12 px-4">
+          <div className="max-w-8xl mx-auto">
+            <div className="flex items-center justify-center gap-16 mb-6">
+              <div className="h-32 w-24 bg-gray-700 rounded"></div>
+              <div>
+                <div className="h-8 bg-gray-700 rounded w-48 mb-12"></div>
+                <div className="flex gap-8">
+                  {[1, 2, 3].map((item) => (
+                    <div key={item} className="h-6 bg-gray-700 rounded w-40"></div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div className="border-t border-gray-700 my-8"></div>
+            <div className="text-center space-y-3">
+              <div className="h-8 bg-gray-700 rounded w-96 mx-auto"></div>
+              <div className="h-4 bg-gray-700 rounded w-80 mx-auto"></div>
+              <div className="h-4 bg-gray-700 rounded w-64 mx-auto"></div>
+              <div className="h-4 bg-gray-700 rounded w-72 mx-auto"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
     return (
         <div>
         <div className="px-4 md:px-8 mt-16 mb-8">
   <h1 className="mb-8 uppercase text-4xl md:text-6xl text-[#008A8A] font-bold">About</h1>
-  <p className="max-w-5xl text-[#0C0C0D] text-base md:text-lg font-normal">
-    Established in 2014, AL ANEEQ GENERAL MAINTENANCE LLC has immense pleasure in introducing ourselves as one of the growing interior designers and contractors of residential and commercial projects. Our talented team of professionals has extensive technical knowledge and skills with a successful track record of practical experience. A dedicated project team is assigned to closely monitor each project to ensure successful and timely completion.
-  </p>
+  <p className="max-w-5xl text-[#0C0C0D] text-sm md:text-base font-normal">
+  Established in 2014, AL ANEEQ GENERAL MAINTENANCE LLC has immense pleasure in introducing ourselves as one of the growing interior designers and contractors of residential and commercial projects. Our talented team of professionals has extensive technical knowledge and skills with a successful track record of practical experience. A dedicated project team is assigned to closely monitor each project to ensure successful and timely completion.
+</p>
 </div>
 
 <div className="px-4 md:px-8 mb-16">
@@ -17,35 +126,43 @@
       {/* Our Approach */}
       <div>
         <h3 className="mb-6 text-[#008A8A] text-2xl md:text-3xl font-medium">Our Approach</h3>
-        <p className="text-[#0C0C0D] text-base md:text-lg font-normal mb-6">
-          Our strength lies in integrating professional expertise, precision, workmanship, and perfect understanding of client needs to come up with design solutions that are not only exclusive but cost-effective as well.
-        </p>
-        <p className="text-[#0C0C0D] text-base md:text-lg font-normal mb-6">
-          Our commitment to every project is total, with a well-planned project execution program including timely allocation of resources, monitoring progress, and coordinating activities with other agencies involved.
-        </p>
+        <p className="text-[#0C0C0D] text-sm md:text-base font-normal mb-6">
+  Our strength lies in integrating professional expertise, precision, workmanship, and perfect understanding of client needs to come up with design solutions that are not only exclusive but cost-effective as well.
+</p>
+        <p className="text-[#0C0C0D] text-sm md:text-base font-normal mb-6">
+  Our commitment to every project is total, with a well-planned project execution program including timely allocation of resources, monitoring progress, and coordinating activities with other agencies involved.
+</p>
       </div>
 
       {/* Customer Satisfaction */}
       <div>
         <h3 className="mb-6 text-[#008A8A] text-2xl md:text-3xl font-medium">Customer Satisfaction</h3>
-        <p className="text-[#0C0C0D] text-base md:text-lg font-normal mb-6">
+        <p className="text-[#0C0C0D] text-sm md:text-base font-normal mb-6">
           Customer satisfaction is our primary objective. We take time to understand our customer's needs so as to meet their demands to their satisfaction. Our relationship with the customer begins with trust and honesty.
         </p>
-        <p className="text-[#0C0C0D] text-base md:text-lg font-normal mb-6">
+        <p className="text-[#0C0C0D] text-sm md:text-base font-normal mb-6">
           The operational practices are focused on identifying, understanding, and meeting their needs and expectations. The perfect blend of our superior workmanship and affordable pricing adds more to our customer satisfaction.
         </p>
       </div>
     </div>
 
     {/* Image Section */}
-    <div className="w-full lg:w-1/2">
-      <img 
-        src="/src/assets/Rectangle 11.png"  // Note: In production, use a public path like /assets/Rectangle 11.png if using Vite/Create React App
-        alt="Interior design project by AL ANEEQ"
-        className="w-full h-auto object-cover"
-        loading='lazy'
-      />
-    </div>
+    <div className="w-full lg:w-1/2 relative overflow-hidden">
+            {!imageLoaded && (
+              <div className="absolute inset-0 bg-gray-200 animate-pulse">
+                <div className="w-full h-full linear-to-r from-gray-200 via-gray-300 to-gray-200"></div>
+              </div>
+            )}
+            <img 
+              src={aboutImg}
+              alt="Interior design project by AL ANEEQ"
+              className={`w-full h-auto object-cover transition-opacity duration-500 ${
+                imageLoaded ? 'opacity-100' : 'opacity-0'
+              }`}
+              onLoad={() => setImageLoaded(true)}
+              loading='lazy'
+            />
+          </div>
   </div>
 </div>
             <div className="bg-[#211D1EF5] text-white py-16 px-4">
