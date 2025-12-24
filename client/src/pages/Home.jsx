@@ -38,7 +38,7 @@ export default function Home() {
     return (
       <div className="max-w-7xl mx-auto animate-pulse">
         {/* Hero Section Skeleton */}
-        <div className='mt-8 mb-8 px-4'>
+        <div className='mt-8 mb-8 px-4 md:px-8'>
           <div className='h-16 md:h-20 lg:h-24 bg-gray-200 rounded w-3/4 mb-2'></div>
           <div className='h-16 md:h-20 lg:h-24 bg-gray-200 rounded w-3/4'></div>
         </div>
@@ -82,7 +82,7 @@ export default function Home() {
         </section>
 
         {/* Services Section Skeleton */}
-        <div className="mb-16 px-8">
+        <div className="mb-16 px-4 md:px-8">
           <div className="grid md:grid-cols-2 gap-0">
             <div className="h-96 bg-gray-200"></div>
             <div className="bg-gray-100 px-8 md:px-12 py-8">
@@ -101,7 +101,7 @@ export default function Home() {
         </div>
 
         {/* Customer/Team Section Skeleton */}
-        <div className="pb-16 px-8">
+        <div className="pb-16 px-4 md:px-8">
           <div className="max-w-7xl mx-auto space-y-16">
             {[1, 2].map(item => (
               <div key={item} className="grid md:grid-cols-2 gap-8">
@@ -120,7 +120,7 @@ export default function Home() {
         </div>
 
         {/* Gallery Skeleton */}
-        <div className="px-8 mb-16">
+        <div className="px-4 md:px-8 mb-16">
           <div className="grid grid-cols-2 gap-0">
             {[1, 2, 3, 4].map(item => (
               <div key={item} className="h-64 bg-gray-200"></div>
@@ -129,7 +129,7 @@ export default function Home() {
         </div>
 
         {/* Testimonials Skeleton */}
-        <div className="bg-gray-200 py-16 px-10">
+        <div className="bg-gray-200 py-16 px-4 md:px-8">
           <div className="max-w-7xl mx-auto">
             <div className='h-8 bg-gray-300 rounded w-64 mb-8'></div>
             <div className="grid md:grid-cols-3 gap-6">
@@ -154,7 +154,7 @@ export default function Home() {
   return (
     <div className="max-w-7xl mx-auto">
       {/* Hero Section */}
-      <div className='uppercase mt-8 mb-8 px-4'>
+      <div className='uppercase mt-8 mb-8 px-4 md:px-8'>
   <h1 className='text-[#18181B] text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[96px] font-semibold leading-none'>
     Creating Spaces
   </h1>
@@ -188,18 +188,18 @@ export default function Home() {
       </div>
 
       {/* About Section */}
-      <section className="bg-[#1a1a1a] text-white py-16 px-8 mb-16">
+      <section className="bg-[#1a1a1a] text-white py-16 px-4 md:px-8 mb-16">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-30">
             <div className="space-y-8">
               <h3 className="text-xs uppercase tracking-wider text-[#92E4E4]">About Us</h3>
               
-              <div>
-                <h2 className="text-xl sm:text-2xl lg:text-[26px] leading-relaxed">
-                  <span className="text-[#F8F8F8] font-semibold">AL ANEEQ GENERAL MAINTENANCE LLC established in 2014, is an expert interior design and contracting firm for Homes, Villas, and Hotel apartments, Residential and Commercial projects.</span>
-                  <span className="text-[#979797] font-normal"> We ensure successful, on-time delivery through our skilled team and dedicated project management.</span>
-                </h2>
-              </div>
+            <div>
+              <h2 className="text-xl sm:text-2xl lg:text-[26px] leading-snug">
+                <span className="text-[#F8F8F8] font-semibold">AL ANEEQ GENERAL MAINTENANCE LLC established in 2014, is an expert interior design and contracting firm for Homes, Villas, and Hotel apartments, Residential and Commercial projects.</span>
+                <span className="text-[#979797] font-normal"> We ensure successful, on-time delivery through our skilled team and dedicated project management.</span>
+              </h2>
+            </div>
 
               <div className="pt-8">
                 <p className="text-sm sm:text-base text-[#F8F8F8] leading-relaxed">
@@ -241,10 +241,10 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <div className="mb-16 px-8">
+      <div className="mb-16 px-4 md:px-8">
         <div className="grid md:grid-cols-2 gap-0">
           {/* Left - Image */}
-          <div className="relative bg-gray-800 h-96 md:h-auto flex items-center justify-center overflow-hidden">
+          <div className="relative bg-gray-800 h-96 md:h-auto flex items-center justify-center overflow-hidden mb-8">
             {!imagesLoaded.services && (
               <div className="absolute inset-0 bg-gray-200 animate-pulse">
                 <div className="w-full h-full linear-to-r from-gray-200 via-gray-300 to-gray-200"></div>
@@ -262,7 +262,7 @@ export default function Home() {
           </div>
           
           {/* Right - Menu */}
-          <div className="bg-white px-8 md:px-12 flex flex-col">
+          <div className="bg-white flex flex-col md:px-8">
             <div className="mb-12">
               <p className="text-xl font-normal text-[#008A8A] mb-6">Services</p>
               <p className="text-sm sm:text-base text-[#211D1E]">
@@ -271,62 +271,62 @@ export default function Home() {
             </div>
             
             <nav className="space-y-4 mb-20">
-              <Link to="/services/wall-coverings" className="flex justify-between items-center py-3 border-b border-gray-200 hover:text-gray-600 transition">
+              <Link to="/services/wall-coverings" className="flex justify-between items-center py-3 border-b border-gray-200 hover:text-[#008A8A] transition">
                 <span className="text-sm font-medium">Wall Coverings</span>
                 <span className="text-[#211D1E]">
-                  <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg className="group-hover:stroke-[#008A8A]" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1 13L7 7L1 1" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </span>
               </Link>
               
-              <Link to="/services/flooring-solutions" className="flex justify-between items-center py-3 border-b border-gray-200 hover:text-gray-600 transition">
+              <Link to="/services/flooring-solutions" className="flex justify-between items-center py-3 border-b border-gray-200 hover:text-[#008A8A] transition">
                 <span className="text-sm font-medium">Flooring Solutions</span>
                 <span className="text-[#211D1E]">
-                  <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg className="group-hover:stroke-[#008A8A]" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1 13L7 7L1 1" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </span>
               </Link>
               
-              <Link to="/services/wall-paintings" className="flex justify-between items-center py-3 border-b border-gray-200 hover:text-gray-600 transition">
+              <Link to="/services/wall-paintings" className="flex justify-between items-center py-3 border-b border-gray-200 hover:text-[#008A8A] transition">
                 <span className="text-sm font-medium">Wall Paintings</span>
                 <span className="text-[#211D1E]">
-                  <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg className="group-hover:stroke-[#008A8A]" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1 13L7 7L1 1" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </span>
               </Link>
               
-              <Link to="/services/wallpaper-supply" className="flex justify-between items-center py-3 border-b border-gray-200 hover:text-gray-600 transition">
+              <Link to="/services/wallpaper-supply" className="flex justify-between items-center py-3 border-b border-gray-200 hover:text-[#008A8A] transition">
                 <span className="text-sm font-medium">Customized Wallpaper Supply</span>
                 <span className="text-[#211D1E]">
-                  <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg className="group-hover:stroke-[#008A8A]" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1 13L7 7L1 1" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </span>
               </Link>
               
-              <Link to="/services/curtains-blinds" className="flex justify-between items-center py-3 border-b border-gray-200 hover:text-gray-600 transition">
+              <Link to="/services/curtains-blinds" className="flex justify-between items-center py-3 border-b border-gray-200 hover:text-[#008A8A] transition">
                 <span className="text-sm font-medium">Curtains & Blinds</span>
                 <span className="text-[#211D1E]">
-                  <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg className="group-hover:stroke-[#008A8A]" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1 13L7 7L1 1" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </span>
               </Link>
             </nav>
             
-            <button className="mt-8 rounded-lg bg-black text-white px-6 py-2 text-sm hover:bg-gray-800 transition w-fit flex items-center gap-2">
+            <Link to="/services" className="mt-8 rounded-lg bg-black text-white px-6 py-2 text-sm hover:bg-gray-800 transition w-fit flex items-center gap-2">
               View All
               <ArrowUpRight className="w-4 h-4" />
-            </button>
+            </Link>
           </div>
         </div>
       </div>
 
       {/* Customer Satisfaction & Team Section */}
-      <div className="pb-16 px-8">
+      <div className="pb-16 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Customer Satisfaction */}
           <div className="grid md:grid-cols-2 gap-8 mb-16">
@@ -390,7 +390,7 @@ export default function Home() {
       </div>
 
       {/* Gallery */}
-      <div className="px-8">
+      <div className="px-4 md:px-8">
         <div className="grid grid-cols-2">
           {[
             { src: square1, key: 'gallery1', alt: 'Interior 1' },
@@ -419,7 +419,7 @@ export default function Home() {
       </div>
 
       {/* Testimonials */}
-      <div className="bg-[#BDE1E1] py-16 px-10">
+      <div className="bg-[#BDE1E1] py-16 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="mb-8">
             <p className="text-[#008A8A] text-sm mb-2">Testimonials</p>

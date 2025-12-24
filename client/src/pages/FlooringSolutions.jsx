@@ -15,7 +15,7 @@ export default function FlooringSolutions() {
 
   if (!contentLoaded) {
     return (
-      <div className="py-16 px-4 animate-pulse">
+      <div className="py-16 px-4 md:px-8 animate-pulse">
         <div className="max-w-6xl mx-auto">
           {/* Title Skeleton */}
           <div className="h-10 bg-gray-200 rounded w-64 mb-6"></div>
@@ -50,7 +50,7 @@ export default function FlooringSolutions() {
   }
 
   return (
-    <div className="py-16 px-8">
+    <div className="py-16 px-4 md:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Page Title */}
         <h1 className="text-4xl font-bold text-[#18181B] mb-6 uppercase">Flooring Solutions</h1>

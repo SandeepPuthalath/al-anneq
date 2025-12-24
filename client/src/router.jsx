@@ -5,12 +5,13 @@ import Layout from './components/layouts/Layout'
 const Home = React.lazy(() => import('./pages/Home'))
 const About = React.lazy(() => import('./pages/About'))
 const Services = React.lazy(() => import('./pages/Services'))
+const Contact = React.lazy(() => import('./pages/Contact'))
 const WallCoverings = React.lazy(() => import('./pages/WallCoverings'))
 const CurtainsAndBlinds = React.lazy(() => import('./pages/CurtainsAndBlinds'))
 const FlooringSolutions = React.lazy(() => import('./pages/FlooringSolutions'))
 const WallpaperSupply = React.lazy(() => import('./pages/WallpaperSupply'))
 const WallPainting = React.lazy(() => import('./pages/WallPainting'))
-const NotFound = React.lazy(() => import('./pages/NotFound'))
+const NotFound = React.lazy(() => import('./pages/NotFound'));
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,22 @@ const router = createBrowserRouter([
         element: (
           <React.Suspense fallback={null}>
             <Services />
+          </React.Suspense>
+        ),
+      },
+      { 
+        path: 'services', 
+        element: (
+          <React.Suspense fallback={null}>
+            <Services />
+          </React.Suspense>
+        ),
+      },
+      { 
+        path: 'Contact', 
+        element: (
+          <React.Suspense fallback={null}>
+            <Contact />
           </React.Suspense>
         ),
       },

@@ -52,7 +52,7 @@ const Header = ({
             <div className="hidden md:block">
               <Link
                 to="/contact"
-                className="px-8 py-2 min-w-[220px] rounded-md bg-[#18181B] text-[#FFFFFF] text-[16px] font-normal hover:opacity-90 transition text-center"
+                className="ml-6 px-6 py-2 text-sm min-w-[220px] rounded-md bg-[#18181B] text-[#FFFFFF] text-[16px] font-normal hover:opacity-90 transition text-center"
               >
                 Contact Us
               </Link>
@@ -96,7 +96,7 @@ const Header = ({
                 </Link>
               )
             })}
-            <div className="px-3">
+            <div className="mt-8">
               <Link
                 to="/contact"
                 className="block w-full text-center px-4 py-2 rounded-md bg-[#18181B] text-[#FFFFFF] font-medium"
