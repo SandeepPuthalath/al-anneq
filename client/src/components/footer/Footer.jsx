@@ -51,7 +51,7 @@ export default function Footer() {
 
           </a>
           <a 
-            href="#" 
+            href="https://www.instagram.com/al_aneeqgm?igsh=MWdjY2U5dGFvMzJzMA==" 
             className="transition-transform hover:scale-110 duration-300"
             aria-label="Instagram"
           >

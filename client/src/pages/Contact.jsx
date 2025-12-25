@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { MapPin, Mail, Phone } from 'lucide-react';
 import { motion } from 'framer-motion';
 import contactImg from '../assets/contact.png';
+import emailjs from '@emailjs/browser';
+import { useNotify } from '../hooks/userNotify';
 
 const smoothFadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -31,12 +33,8 @@ const smoothImageReveal = {
 export default function Contact() {
   const [contentLoaded, setContentLoaded] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
-
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
+  const { addNotification } = useNotify();
+  const form = useRef();
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -45,16 +43,35 @@ export default function Contact() {
     return () => clearTimeout(timer);
   }, []);
 
-  const handleSubmit = () => {
-    console.log('Form submitted:', formData);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const formData = form.current;
     // Handle form submission (e.g. send to backend, show toast, reset form, etc.)
-  };
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    emailjs
+      .sendForm('service_596b9pg', 'template_n81jgq6', formData, {
+        publicKey: 'Smn2KSPuUEqdSAEj6',
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+          addNotification({
+            type: 'success',
+            message: 'Email sent!',
+            description: 'Your message has been sent successfully.',
+          });
+          form.current.reset(); // Reset the form after successful submission
+        },
+        (error) => {
+          console.log('FAILED...', error);
+          addNotification({
+            type: 'error',
+            message: 'Error sending email',
+            description: error.message || 'An unexpected error occurred.',
+            duration: 7000,
+          });
+        },
+      );
   };
 
   if (!contentLoaded) {
@@ -159,6 +176,7 @@ export default function Contact() {
             </motion.div>
 
             {/* Contact Form */}
+            <form ref={form} onSubmit={handleSubmit}>
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -176,10 +194,9 @@ export default function Contact() {
                     Name
                   </label>
                   <input
+                    required={true}
                     type="text"
                     name="name"
-                    value={formData.name}
-                    onChange={handleChange}
                     placeholder="Your Name"
                     className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
                   />
@@ -195,9 +212,8 @@ export default function Contact() {
                   </label>
                   <input
                     type="email"
+                    required={true}
                     name="email"
-                    value={formData.email}
-                    onChange={handleChange}
                     placeholder="email@xyz.com"
                     className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
                   />
@@ -213,8 +229,7 @@ export default function Contact() {
                   </label>
                   <textarea
                     name="message"
-                    value={formData.message}
-                    onChange={handleChange}
+                    required={true}
                     placeholder="Your message"
                     rows="6"
                     className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent resize-none"
@@ -226,7 +241,7 @@ export default function Contact() {
                   transition={{ duration: 0.4 }}
                 >
                   <button
-                    onClick={handleSubmit}
+                    type="submit"
                     className="w-full cursor-pointer bg-[#008A8A] hover:bg-[#009090] text-white font-medium py-3 px-6 rounded transition-colors duration-200"
                   >
                     Submit
@@ -234,7 +249,9 @@ export default function Contact() {
                 </motion.div>
               </div>
             </motion.div>
+            </form>
           </div>
+          
 
           {/* Right Column - Contact Information Card with background image */}
           <motion.div
