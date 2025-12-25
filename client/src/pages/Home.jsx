@@ -216,7 +216,7 @@ export default function Home() {
         whileInView="visible"
         viewport={{ once: true, margin: "-120px" }}
         variants={smoothImageReveal}
-        className='relative overflow-hidden mb-16'
+        className='relative overflow-hidden'
       >
         {!imagesLoaded.hero && (
           <div className="absolute inset-0 bg-gray-200 animate-pulse" />
@@ -373,7 +373,7 @@ export default function Home() {
         className="pb-16 px-4 md:px-8"
       >
         <div className="max-w-7xl mx-auto space-y-20">
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-2 gap-12 items-start">
             <motion.div 
               initial={{ opacity: 0, y: 35 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -400,7 +400,7 @@ export default function Home() {
             </motion.div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-2 gap-12 items-start">
             <motion.div variants={smoothImageReveal} className="order-2 md:order-1">
               {!imagesLoaded.team && <div className="absolute inset-0 bg-gray-200 animate-pulse" />}
               <img 
