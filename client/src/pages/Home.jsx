@@ -260,7 +260,7 @@ export default function Home() {
             <div className="flex flex-col items-center justify-center space-y-10">
               {[
                 { num: "10", label: "Experience in the industry." },
-                { num: "177", label: "Projects Completed." },
+                { num: "5K", label: "Projects Completed." },
                 { num: "95", suffix: "%", label: "Client Satisfaction Rate" }
               ].map((stat, i) => (
                 <motion.div
@@ -326,7 +326,7 @@ export default function Home() {
                 "Wall Coverings",
                 "Flooring Solutions",
                 "Wall Paintings",
-                "Customized Wallpaper Supply",
+                "Customized Wallpaper",
                 "Curtains & Blinds"
               ].map((item, i) => (
                 <motion.div

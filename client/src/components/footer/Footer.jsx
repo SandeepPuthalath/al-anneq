@@ -1,4 +1,5 @@
 import { Twitter, Facebook, Instagram, Github } from 'lucide-react';
+import { Link } from 'react-router';
 
 export default function Footer() {
   return (
@@ -29,15 +30,26 @@ export default function Footer() {
 </div>
           
           <nav className="flex gap-8 mb-6 md:mb-0">
-            <a href="/" className="text-white hover:text-gray-300 transition text-sm">
-              Home
-            </a>
-            <a href="/services" className="text-white hover:text-gray-300 transition text-sm">
-              Service
-            </a>
-            <a href="/about" className="text-white hover:text-gray-300 transition text-sm">
-              About
-            </a>
+            <Link 
+    to="/" 
+    className="text-white hover:text-gray-300 transition text-sm"
+  >
+    Home
+  </Link>
+
+  <Link 
+    to="/services" 
+    className="text-white hover:text-gray-300 transition text-sm"
+  >
+    Service
+  </Link>
+
+  <Link 
+    to="/about" 
+    className="text-white hover:text-gray-300 transition text-sm"
+  >
+    About
+  </Link>
           </nav>
         </div>
 

@@ -85,7 +85,7 @@ export default function WallpaperSupply() {
           variants={smoothFadeUp}
           className="text-4xl font-bold text-[#18181B] mb-6 uppercase"
         >
-          Specialized for Customized Wallpaper supply
+          Specialized for Customized Wallpaper
         </motion.h1>
 
         {/* Description */}
@@ -110,7 +110,7 @@ export default function WallpaperSupply() {
             variants={smoothFadeUp}
           >
             <h2 className="text-xl font-semibold text-[#008A8A] mb-6">
-              Specialized for Customized Wallpaper supply
+              Specialized for Customized Wallpaper
             </h2>
             <p className="text-sm font-semibold text-[#211D1E] mb-6">
               We are specialized wallpaper suppliers offering an extensive collection of premium wallpapers for residential and commercial projects.

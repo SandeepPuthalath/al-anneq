@@ -43,14 +43,6 @@ const router = createBrowserRouter([
         ),
       },
       { 
-        path: 'services', 
-        element: (
-          <React.Suspense fallback={null}>
-            <Services />
-          </React.Suspense>
-        ),
-      },
-      { 
         path: 'Contact', 
         element: (
           <React.Suspense fallback={null}>
@@ -91,7 +83,7 @@ const router = createBrowserRouter([
         ) 
       },
       { 
-        path: 'services/wallpaper-supply', 
+        path: 'services/customized-wallpaper', 
         element: (
           <React.Suspense fallback={null}>
             <WallpaperSupply />
