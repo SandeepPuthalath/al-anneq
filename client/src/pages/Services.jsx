@@ -104,7 +104,7 @@ const Services = () => {
             { title: "Wall Coverings", path: "/services/wall-coverings" },
             { title: "Flooring Solutions", path: "/services/flooring-solutions" },
             { title: "Wall Paintings", path: "/services/wall-paintings" },
-            { title: "Customized Wallpaper supply", path: "/services/wallpaper-supply" },
+            { title: "Customized Wallpaper", path: "/services/customized-wallpaper" },
             { title: "Curtains & Blinds", path: "/services/curtains-blinds" },
           ].map((service, index) => (
             <motion.div
